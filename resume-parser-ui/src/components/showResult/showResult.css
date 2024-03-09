@@ -1,0 +1,40 @@
+.resultWrapper{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px;
+}
+.resultTabs{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-bottom: 1px solid;
+    cursor: pointer;
+}
+
+.navTab{
+    width: 100%;
+    padding: 1rem 0;
+    color: aliceblue;
+}
+
+.navTab:not(:last-child) {
+    border-right: 1px solid #ccc; /* Add border to all but the last tab */
+}
+
+.navTab.active {
+    background-color: var(--background-color);/* Active tab background */
+    
+}
+
+.navTab.inactive {
+    /* Styles for inactive tabs if needed */
+    background-color: var(--background-color-inactive);
+}
+
+.resultTables{
+overflow: auto;
+}

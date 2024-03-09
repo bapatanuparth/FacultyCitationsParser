@@ -1,0 +1,46 @@
+{
+    "Publications":[{
+        "citation": "Gamache, D.L., Devers, C.E., Klein, F.B, & Hannigan, T. (2023) Shifting perspectives: How scrutiny shapes the relationship between CEO gender and acquisition activity, Strategic Management Journal 44: 3012-3041.",
+        "extractedAuthors": ["Gamache, D.L.", "Devers, C.E.", "Klein, F.B,", "Hannigan, T."],
+        "journalName": "Strategic Management Journal 44: 3012-3041",
+        "paperTitle": "Shifting perspectives: How scrutiny shapes the relationship between CEO gender and acquisition activity",
+        "yearsExtracted": "2023",
+        "eliteJournal": "Strategic Management Journal"
+      },
+      {
+        "citation": "Mah, J., Kolev, K., McNamara, G., Pan., L. & Devers, C.E. (2023) Women in the C-suite: A review and agenda of the challenges, opportunities, and impact of female top executives. In press. Academy of Management Annals 17: 586-625.",
+        "extractedAuthors": ["Mah, J.", "Kolev, K.", "McNamara, G.", "Pan., L.", "Devers, C.E."],
+        "journalName": "Academy of Management Annals 17: 586-625",
+        "paperTitle": "Women in the C-suite: A review and agenda of the challenges, opportunities, and impact of female top executives. In press",
+        "yearsExtracted": "2023",
+        "eliteJournal": null
+      },
+      {
+        "citation": "Gabriel, A.S., Allen, T.D., Devers, C.E., Eby, L.T., Gilson, L.L., Hebl, M., Kehoe, R.R. King, E.B., Ladge, J.J, Little, L.M., Schleicher, D.J., Shockey, K.M., Klotz, A.C., & Rosen, C.C. (2023) A call to action: The imperative of supporting women scholars who have caregiving demands, Focal article: Industrial and Organizational Psychology, 16: 187-210.",
+        "extractedAuthors": ["Gabriel, A.S.", "Allen, T.D.", "Devers, C.E.", "Eby, L.T.", "Gilson, L.L.", "Hebl, M.", "Kehoe, R.R.", "King, E.B.", "Ladge, J.J,", "Little, L.M.", "Schleicher, D.J.", "Shockey, K.M.", "Klotz, A.C.", "Rosen, C.C."],
+        "journalName": "Focal article: Industrial and Organizational Psychology",
+        "paperTitle": "A call to action: The imperative of supporting women scholars who have caregiving demands",
+        "yearsExtracted": "2023",
+        "eliteJournal": null
+      }
+
+    ],
+    "Conferences":[
+        {
+            "citation": "Yonish, L., Raney, K., Devers, C.E., Bundy, J. (2023). No Room for Redemption: Toward an Understanding of Cancellation as an Organizational Phenomenon. Annual Meeting of the Academy of Management.",
+            "extractedAuthors": ["Yonish, L.", "Raney, K.", "Devers, C.E.", "Bundy, J."],
+            "journalName": "Annual Meeting of the Academy of Management",
+            "paperTitle": "No Room for Redemption: Toward an Understanding of Cancellation as an Organizational Phenomenon",
+            "yearsExtracted": "2023",
+            "eliteJournal": null
+          },
+          {
+            "citation": "Devers, C.E. (2023) Keynote speaker at the Pamplin Graduate Student Orientation.",
+            "extractedAuthors": ["Devers, C.E."],
+            "journalName": "Keynote speaker at the Pamplin Graduate Student Orientation",
+            "paperTitle": "",
+            "yearsExtracted": "2023",
+            "eliteJournal": null
+          }
+    ]
+}

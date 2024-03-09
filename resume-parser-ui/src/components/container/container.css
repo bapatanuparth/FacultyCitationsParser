@@ -1,0 +1,27 @@
+.containerWrapper{
+    height: 100%;
+    width: 100%; 
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+/* Define the enter and exit transitions */
+.slide-enter {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  .slide-enter-active {
+    transform: translateX(0%);
+    opacity: 1;
+    transition: opacity 100ms, transform 100ms;
+  }
+  .slide-exit {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  .slide-exit-active {
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: opacity 100ms, transform 100ms;
+  }
+  

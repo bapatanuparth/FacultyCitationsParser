@@ -1,0 +1,66 @@
+.publicationsTableContainer table {
+    width: max-content;
+    border-collapse: collapse;
+    
+  }
+  .publicationsTableContainer th, .publicationsTableContainer td {
+    border: 1px solid var(--table-border);
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .publicationsTableContainer th {
+    background-color: var(--table-header);
+    color: white;
+    position: sticky;
+  top: 0;
+  }
+  
+  .publicationsTableContainer tr:nth-child(even) {
+    background-color: var(--table-row-odd);
+  }
+  
+  .publicationsTableContainer tr:hover {
+    /* background-image: linear-gradient(to right, #757575, #CCCCCC); */
+    background-image: linear-gradient(to right, #9E9E9E, #E0E0E0);
+    cursor: pointer;
+    color: black;
+  }
+  
+  th, td {
+    min-width: 100px; /* Adjust based on your content */
+    padding: 0.5rem 0.5rem;
+  }
+
+  .citationColumn{
+    width: 500px;
+  }
+
+  .authorColumn{
+    width: 200px;
+  }
+
+  .journalColumn{
+    width: 200px;
+  }
+
+  .paperColumn{
+    width: 300px;
+  }
+
+  .yearColumn{
+    width: 100px;
+  }
+
+  .eliteColumn{
+    width: 100px;
+  }
+
+  .not-found{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 3rem;
+    font-size: 24px;
+  }
