@@ -5,12 +5,14 @@ import { LuSearchX } from "react-icons/lu";
 const Conferences = ({data}) => {
   console.log(data.conferences);
   const  Conferences  = data.conferences;
+  const name= data.name;
   return (
     <div className="publicationsTableContainer">
       {Conferences.length>0 &&
       <table>
         <thead>
           <tr>
+          <th className='nameColumn'>Name</th>
           <th className='citationColumn'>Citation</th>
             <th className='authorColumn'>Authors</th>
             <th className='journalColumn'>Journal Name</th>
@@ -22,6 +24,7 @@ const Conferences = ({data}) => {
         <tbody>
           {Conferences.map((conference, index) => (
             <tr key={index}>
+              <td>{name}</td>
               <td>{conference.citation}</td>
               <td>{conference.authors.join(', ')}</td>
               <td>{conference.journal_name}</td>

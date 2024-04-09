@@ -8,12 +8,14 @@ const Publications = ({data}) => {
   
   console.log(data.publications)
   const  Publications  = data.publications;
+  const name= data.name;
   return (
     <div className="publicationsTableContainer">
       {Publications.length>0 &&
       <table>
         <thead>
           <tr>
+          <th className='nameColumn'>Name</th>
             <th className='citationColumn'>Citation</th>
             <th className='authorColumn'>Authors</th>
             <th className='journalColumn'>Journal Name</th>
@@ -25,6 +27,7 @@ const Publications = ({data}) => {
         <tbody>
           {Publications.map((publication, index) => (
             <tr key={index}>
+              <td>{name}</td>
               <td>{publication.citation}</td>
               <td>{publication.authors.join(', ')}</td>
               <td>{publication.journal_name}</td>

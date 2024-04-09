@@ -45,7 +45,11 @@
   }
 
   .paperColumn{
-    width: 300px;
+    width: 150px;
+  }
+
+  .nameColumn{
+    width: 200px;
   }
 
   .yearColumn{

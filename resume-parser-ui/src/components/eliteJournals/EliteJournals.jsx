@@ -7,11 +7,13 @@ const EliteJournals = ({data}) => {
         ...data.publications.filter(entry => entry.elite_journal !== null),
         ...data.conferences.filter(entry => entry.elite_journal !== null)
       ];
+      const name= data.name;
   return (
     <div className="publicationsTableContainer">
       {eliteEntries.length>0 && <table>
         <thead>
         <tr>
+        <th className='nameColumn'>Name</th>
             <th className='citationColumn'>Citation</th>
             <th className='authorColumn'>Authors</th>
             <th className='journalColumn'>Journal Name</th>
@@ -23,6 +25,7 @@ const EliteJournals = ({data}) => {
         <tbody>
           {eliteEntries.map((elite, index) => (
             <tr key={index}>
+              <td>{name}</td>
               <td>{elite.citation}</td>
               <td>{elite.authors.join(', ')}</td>
               <td>{elite.journal_name}</td>
