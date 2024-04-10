@@ -1,7 +1,12 @@
+.publicationsTableContainer{
+  overflow: auto;
+  border-radius: 10px;
+}
+
 .publicationsTableContainer table {
     width: max-content;
     border-collapse: collapse;
-    
+    table-layout: auto;
   }
   .publicationsTableContainer th, .publicationsTableContainer td {
     border: 1px solid var(--table-border);
@@ -15,7 +20,7 @@
     position: sticky;
   top: 0;
   }
-  
+   
   .publicationsTableContainer tr:nth-child(even) {
     background-color: var(--table-row-odd);
   }
@@ -24,7 +29,7 @@
     /* background-image: linear-gradient(to right, #757575, #CCCCCC); */
     background-image: linear-gradient(to right, #9E9E9E, #E0E0E0);
     cursor: pointer;
-    color: black;
+    color: black; 
   }
   
   th, td {
@@ -45,11 +50,11 @@
   }
 
   .paperColumn{
-    width: 150px;
+    width: 200px;
   }
 
   .nameColumn{
-    width: 200px;
+    width: max-content;
   }
 
   .yearColumn{

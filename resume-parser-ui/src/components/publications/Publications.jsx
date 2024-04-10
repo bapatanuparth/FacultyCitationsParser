@@ -5,13 +5,19 @@ import { LuSearchX } from "react-icons/lu";
 
 
 const Publications = ({data}) => {
+
+  const allPublications= data.reduce((acc, person)=>{
+    const currPersonPubs = person.publications.map(pub=>({...pub, name:person.name}));
+    return [...acc, ...currPersonPubs];
+  }, []);
   
-  console.log(data.publications)
-  const  Publications  = data.publications;
-  const name= data.name;
+  console.log(allPublications)
+  // console.log(data)
+  // const  Publications  = data.publications;
+  // const name= data.name;
   return (
     <div className="publicationsTableContainer">
-      {Publications.length>0 &&
+      {allPublications.length>0 &&
       <table>
         <thead>
           <tr>
@@ -25,9 +31,9 @@ const Publications = ({data}) => {
           </tr>
         </thead>
         <tbody>
-          {Publications.map((publication, index) => (
+          {allPublications.map((publication, index) => (
             <tr key={index}>
-              <td>{name}</td>
+              <td>{publication.name}</td>
               <td>{publication.citation}</td>
               <td>{publication.authors.join(', ')}</td>
               <td>{publication.journal_name}</td>
@@ -38,7 +44,7 @@ const Publications = ({data}) => {
           ))}
         </tbody>
       </table>}
-      {Publications.length===0 &&  <div className='not-found'><span>No Publications found</span> <LuSearchX /></div>}
+      {<div className='not-found'><span>No Publications found</span> <LuSearchX /></div>}
     </div>
   )
 }

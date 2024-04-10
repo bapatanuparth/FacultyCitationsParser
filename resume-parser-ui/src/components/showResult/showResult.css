@@ -36,5 +36,8 @@
 }
 
 .resultTables{
-overflow: auto;
+    padding: 2rem;
+    height: 100%;
+    display: flex;
+    overflow: auto;
 }
