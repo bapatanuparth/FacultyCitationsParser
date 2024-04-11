@@ -44,7 +44,7 @@ const Publications = ({data}) => {
           ))}
         </tbody>
       </table>}
-      {<div className='not-found'><span>No Publications found</span> <LuSearchX /></div>}
+      {allPublications.length===0 && <div className='not-found'><span>No Publications found</span> <LuSearchX /></div>}
     </div>
   )
 }

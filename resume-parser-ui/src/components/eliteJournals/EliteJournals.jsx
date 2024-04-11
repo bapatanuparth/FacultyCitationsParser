@@ -3,11 +3,18 @@ import './eliteJournals.css'
 import { LuSearchX } from "react-icons/lu";
 
 const EliteJournals = ({data}) => {
-    const eliteEntries = [
-        ...data.publications.filter(entry => entry.elite_journal !== null),
-        ...data.conferences.filter(entry => entry.elite_journal !== null)
-      ];
-      const name= data.name;
+
+  const eliteEntries= data.reduce((acc, person)=>{
+    const eliteEntriesPerson = [
+      ...person.publications.filter(entry => entry.elite_journal !== null),
+      ...person.conferences.filter(entry => entry.elite_journal !== null)
+    ];
+
+    const newElite=eliteEntriesPerson.map(elite=>({...elite, name:person.name}));
+    return [...acc, ...newElite];
+  },[]);
+  
+  console.log(eliteEntries)
   return (
     <div className="publicationsTableContainer">
       {eliteEntries.length>0 && <table>
@@ -25,7 +32,7 @@ const EliteJournals = ({data}) => {
         <tbody>
           {eliteEntries.map((elite, index) => (
             <tr key={index}>
-              <td>{name}</td>
+              <td>{elite.name}</td>
               <td>{elite.citation}</td>
               <td>{elite.authors.join(', ')}</td>
               <td>{elite.journal_name}</td>

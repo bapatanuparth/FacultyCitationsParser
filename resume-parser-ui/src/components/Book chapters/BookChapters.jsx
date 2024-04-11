@@ -3,12 +3,18 @@ import './bookChapters.css'
 import { LuSearchX } from "react-icons/lu";
 
 const BookChapters = ({data}) => {
-  console.log(data.bookChapters);
-  const  BookChapters  = data.bookChapters;
-  const name= data.name;
+
+
+  const allBookChapters=data.reduce((acc, person)=>{
+    const bookPerson = person.bookChapters.map(ch=>{return {...ch, name:person.name}});
+    return [...acc, ...bookPerson];
+  }, [])
+  // console.log(data.bookChapters);
+  // const  BookChapters  = data.bookChapters;
+  // const name= data.name;
   return (
     <div className="publicationsTableContainer">
-    {BookChapters.length>0 &&
+    {allBookChapters.length>0 &&
     <table>
       <thead>
         <tr>
@@ -22,9 +28,9 @@ const BookChapters = ({data}) => {
         </tr>
       </thead>
       <tbody>
-        {BookChapters.map((bookchapter, index) => (
+        {allBookChapters.map((bookchapter, index) => (
           <tr key={index}>
-            <td>{name}</td>
+            <td>{bookchapter.name}</td>
             <td>{bookchapter.citation}</td>
             <td>{bookchapter.authors.join(', ')}</td>
             <td>{bookchapter.journal_name}</td>

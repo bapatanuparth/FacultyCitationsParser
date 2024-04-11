@@ -12,25 +12,29 @@ quantum.register()
 const Upload = ({onDataFetch}) => {
   const [year, setYear] = useState("");
   const [parseText, setParseText]= useState("Parse Text")
-  const [file, setFile] = useState(null);
-  const [fileName, setFileName] = useState("Choose file");
+  const [files, setFiles] = useState([]);
+  const [fileNames, setFileNames] = useState("Choose files");
   const [isLoading, setIsLoading] = useState(false);
   const toast = useRef(null);
 
   const handleYearChange = (event) => {
     setYear(event.target.value);
+    
   };
 
   const onUpload = async (event) => {
-    const selectedFile = event.target.files[0];
-    if (selectedFile) {
-      setFile(selectedFile);
-      setFileName(selectedFile.name); // Update the fileName state to reflect the selected file's name
-      console.log(selectedFile); // This will log the selected file object correctly
+    
+    const selectedFiles = event.target.files;
+    
+    if (selectedFiles.length>0) {
+      setFiles(selectedFiles);
+      const fileNamesList = Array.from(selectedFiles).map(file => file.name).join(', ');
+      setFileNames(fileNamesList);
+      console.log(fileNamesList)
       toast.current.show({
         severity: "success",
         summary: "Success",
-        detail: "File Selected",
+        detail: "Files Selected",
       });
     }
   };
@@ -39,14 +43,16 @@ const Upload = ({onDataFetch}) => {
     e.preventDefault();
     console.log("clicked");
 
-    if (file) {
+    if (files.length>0) {
       const formData = new FormData();
-      formData.append("file", file);
+      Array.from(files).forEach(file => {
+        formData.append("files", file); // Append each file under the same 'files' key
+      });
       formData.append("year", year);
       setIsLoading(true); 
       setParseText("Parsing")
       try {
-        const response = await fetch("http://localhost:5000/upload", {
+        const response = await fetch("http://localhost:5000/uploadMany", {
           method: "POST",
           body: formData,
         });
@@ -60,8 +66,8 @@ const Upload = ({onDataFetch}) => {
             detail: "Resume Parsed",
           });
           console.log(data); // Handle the response data as needed
-          setFile(null);
-          setFileName("Choose file");
+          setFiles([]);
+          setFileNames("Choose file");
           setYear('');
           onDataFetch(data)
           
@@ -96,12 +102,13 @@ const Upload = ({onDataFetch}) => {
           <div className="uploadButton">
             <Toast ref={toast} />
             <label htmlFor="file-upload" className="custom-file-upload">
-              {fileName}
+              {fileNames}
             </label>
             <input
               id="file-upload"
               type="file"
               onChange={onUpload}
+              multiple
               style={{ display: "none" }}
             />
           </div>

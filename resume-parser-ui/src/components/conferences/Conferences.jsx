@@ -3,12 +3,17 @@ import './conferences.css'
 import { LuSearchX } from "react-icons/lu";
 
 const Conferences = ({data}) => {
-  console.log(data.conferences);
-  const  Conferences  = data.conferences;
-  const name= data.name;
+
+  const allConferences= data.reduce((acc, person)=>{
+    const conferencePerson = person.conferences.map(conf=>({...conf,name:person.name}));
+    return [...acc, ...conferencePerson];
+  },[])
+  // console.log(data.conferences);
+  // const  Conferences  = data.conferences;
+  // const name= data.name;
   return (
     <div className="publicationsTableContainer">
-      {Conferences.length>0 &&
+      {allConferences.length>0 &&
       <table>
         <thead>
           <tr>
@@ -22,9 +27,9 @@ const Conferences = ({data}) => {
           </tr>
         </thead>
         <tbody>
-          {Conferences.map((conference, index) => (
+          {allConferences.map((conference, index) => (
             <tr key={index}>
-              <td>{name}</td>
+              <td>{conference.name}</td>
               <td>{conference.citation}</td>
               <td>{conference.authors.join(', ')}</td>
               <td>{conference.journal_name}</td>
