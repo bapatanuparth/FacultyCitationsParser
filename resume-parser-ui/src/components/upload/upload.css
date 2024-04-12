@@ -35,6 +35,7 @@ li{
 .inputForm{
    flex: 3;
     height: 70%;
+    padding: 2rem 0;
   
     display: flex;
     flex-direction: column;
@@ -105,6 +106,7 @@ li{
     font-size: 16px; /* Font size */
     transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for background color and box shadow */
     outline: none; /* Remove outline */
+    margin-bottom: 1rem;
 }
 
 .submitButton:hover {
@@ -121,4 +123,28 @@ li{
     display: flex;
     align-items: center;
     gap: 0.5rem;
+}
+
+.filesUploaded{
+    padding: 0.6rem;
+    height: 100%;
+    width: 75%;
+    border-radius: 10px;
+    background-color: #e9e9e9;
+    overflow: auto;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+    gap: 0.3rem;
+}
+
+.singleFile{
+    background-color: #cdcdcd;
+    width: 100%;
+    border-radius: 5px;
+    padding: 0.3rem;
+    padding-left: 0.6rem;
+    text-align: justify;
 }

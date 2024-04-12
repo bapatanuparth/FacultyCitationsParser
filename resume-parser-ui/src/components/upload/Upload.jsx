@@ -13,13 +13,12 @@ const Upload = ({onDataFetch}) => {
   const [year, setYear] = useState("");
   const [parseText, setParseText]= useState("Parse Text")
   const [files, setFiles] = useState([]);
-  const [fileNames, setFileNames] = useState("Choose files");
+  const [fileNames, setFileNames] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const toast = useRef(null);
 
   const handleYearChange = (event) => {
     setYear(event.target.value);
-    
   };
 
   const onUpload = async (event) => {
@@ -28,7 +27,7 @@ const Upload = ({onDataFetch}) => {
     
     if (selectedFiles.length>0) {
       setFiles(selectedFiles);
-      const fileNamesList = Array.from(selectedFiles).map(file => file.name).join(', ');
+      const fileNamesList = Array.from(selectedFiles).map(file => file.name);
       setFileNames(fileNamesList);
       console.log(fileNamesList)
       toast.current.show({
@@ -102,7 +101,7 @@ const Upload = ({onDataFetch}) => {
           <div className="uploadButton">
             <Toast ref={toast} />
             <label htmlFor="file-upload" className="custom-file-upload">
-              {fileNames}
+              Choose files
             </label>
             <input
               id="file-upload"
@@ -119,8 +118,13 @@ const Upload = ({onDataFetch}) => {
               value={year}
               onChange={handleYearChange}
             />
-          </div>
+          </div>      
         </div>
+       <div className="filesUploaded">
+          {fileNames.map((name, index) => (
+            <div key={index} className="singleFile">{name}</div>
+          ))}
+          </div>
         <button className="submitButton" onClick={onSubmit}>
         {parseText}
           {isLoading && <div className="parsingText"><l-quantum
